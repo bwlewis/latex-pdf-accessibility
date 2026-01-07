@@ -10,24 +10,17 @@
 \usepackage{color}
 \usepackage{hyperref}
 \hypersetup{
-pdftitle={Derivative Notation is Awful},
+pdftitle={Differentials},
 pdfauthor={Bryan W. Lewis},
 pdfkeywords={MAT 190 Calculus 1},%
 }
-\usepackage{cite}
 \usepackage{graphicx}
 \usepackage{float}
-\usepackage{fancyhdr}
 \usepackage{geometry}
 \geometry{
   margin=54pt,
   includeheadfoot
 }
-\pagestyle{fancy}
-\renewcommand{\today}{\space\ifcase \month \or January\or February\or March\or April\or May \or June\or July\or August\or September\or October\or November\or December\fi,%
-\space \number \year}
-\rhead{\today}
-\lhead{Garrett College Math 190}
 \pagenumbering{gobble}
 
 \floatstyle{ruled}
@@ -36,145 +29,18 @@ pdfkeywords={MAT 190 Calculus 1},%
 
 
 \begin{document}
-\section*{Derivative Notation is Awful}
 
-This idea of differentiation we're using to compute derivatives of functions
-comes from the late 1600's. And it shows! There are hundreds of years of crufty
-and weird notation we need to at least recognize. This note organizes notation
-by approximate date and inventor.
-
-In every example below, assume that $f$ is a real-valued, differentiable
-function of a real variable (usually called $x$).
-
-\section*{Lagrange's notation (1749)}
-\begin{minipage}[t]{0.75\textwidth}
-\vspace{0pt}
-You're familiar with this one!  The derivative of $f(x)$ is written $f'(x)$.
-There is also an interpretation of the apostrophe (aka ``prime'') as an
-\emph{operator} on a function. What I mean is:
-\[
-\left(f(x)\right)' = f'(x).
-\]
-Note the subtle difference here. On the left of that last equals sign the
-prime symbol is {\it doing something} to the function $f$ to return the thing
-on the right side of the equals sign, which represents the derivative itself (another function).
-In some very specific sense, the $'$ symbol used on the left
-is a kind of function that takes one function as input and returns another as output.\\
-
-The derivative of $f'(x)$---if it exists---is written $f''(x)$, often
-called the 2nd derivative. The derivative of $f''(x)$---if it exists---is
-written, wait for it, $f'''(x)$.
-\end{minipage}
-\begin{minipage}[t]{0.25\textwidth}
-\vspace{0pt}
-$\qquad$\includegraphics[width=0.85\textwidth,alt={Portrait of Lagrange}]{lagrange}
-\end{minipage}
-
-Now, guess how the derivative of $f'''(x)$ is written! Give up? It's
-$f^{(4)}(x)$. Obviously. Note the parenthesis as a bad attempt to avoid confusion
-with $f^4(x)$ which in some books might indicate ``the function $f$ evaluated at $x$
-then raised to the fourth power''. Madness!
-
-
-If you're reading some weirdly Roman-influenced text you might see the
-author using Roman numerals (of all things!). So, like, $f^{\textrm{iv}}(x)$,
-$f^{\textrm{v}}(x)$, etc.  (without parentheses in the superscripts).
-
-
-\section*{Leibniz's notation (1684)\cite{jl}}
-\begin{minipage}[t]{0.25\textwidth}
-\vspace{0pt}
-$\qquad$\includegraphics[width=0.75\textwidth,alt={Portrait of Leibniz}]{leibniz}
-\begin{center}\vspace{-0.5em}\footnotesize{\it (They were really into\\wigs back then...)}\end{center}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.73\textwidth}
-\vspace{0pt}
-This notation is used just as much as the Lagrange notation above.
-If the domain variable is called $x$, then
-the derivative {\it operator} is written $\frac{d}{dx}$. Think of this
-as a function that takes a differentiable function as its argument and
-produces a function as its output. Thus,
-\[
-\frac{d}{dx}\big(f(x)\big) = \frac{df}{dx}(x).
-\]
-On the left, we have a function $f$ whose derivative with respect to $x$ is being taken. On the right,
-a new function called $\frac{df}{dx}$, the first derivative of $f$.
-NOTE(!) that the symbols $\frac{d}{dx}$ and $\frac{df}{dx}$ {\bf are not} fractions---they
-are simply symbols for functions. Except, of course, when they aren't (see below).
-\end{minipage}
-
-Although this seems janky, it's actually a pretty good notation for many reasons.
-In particular, it explicitly indicates the dependent variable which is nice.
-Also, let's say we just have the graph of some function with $x$ and $y$ variables.
-We want to differentiate this {\it curve} (that is, find its slope at each point).
-The derivative of the curve using Leibniz's notation is $\frac{dy}{dx}$.
-This has a very natural interpretation in terms of slope: 
-\[
-\dfrac{dy}{dx}\qquad\textrm{reminds you of}\qquad\dfrac{\textrm{change in }y}{\textrm{change in }x}.
-\]
-
-{\it Conceptually}, think of $dy$ as a tiny change in $y$ and $dx$ as a tiny change in $x$.
-And, again conceptually, the symbol $\frac{dy}{dx}$ reminds us of the ratio that defines slope.
-In fact that is literally almost how Leibniz thought about things, but it took until 1966 until Abraham
-Robinson formalized those ideas mathematically\cite{arob}.
-
-The Leibniz notation represents 2nd and higher order derivatives as:
-\[
-\begin{array}{rcl}
-\frac{d}{dx}\big(f(x)\big) &=& \frac{df}{dx}(x)\\[8pt]
-\frac{d}{dx}\big(\frac{df}{dx}(x)\big) &=& \frac{d^2f}{dx^2}(x)\\[8pt]
-\frac{d}{dx}\left( \frac{d^2f}{dx^2}(x) \right) &=& \frac{d^3f}{dx^3}(x)\\
-\vdots && \vdots
-\end{array}
-\]
-Note 
-$ \frac{d}{dx}\big(\frac{df}{dx}(x)\big) = \frac{d^2f}{dx^2}(x)$ and {\bf{not}} $\frac{d^2f}{d^2x^2}$, $\,$what you might expect if this were algebra class. Welcome to calculus! Remember $dx$ is a symbol that conceptually means a tiny change in $x$---not $d$ times $x$.
-
-
-\section*{Newton's notation (1684)\cite{in}}
-
-\begin{minipage}[t]{0.65\textwidth}
-\vspace{0pt}
-
-This is the notation Isaac Newton used to write derivatives, which he called
-``fluxions.'' It's still used in some books (often when differentiating with respect to time),
-but is less common than the Lagrange and Leibniz notation. The table below shows
-Lagrange and Leibniz notation on the left, and the equivalent Newton notation
-on the right:
-
-\[
-\begin{array}{rrcl}
-y' &=\,\,\frac{dy}{dx} &=& \dot{y}\\[4pt]
-y''&=\frac{d^2y}{dx^2} &=& \ddot{y}\\[4pt]
-y'''&=\frac{d^3y}{dx^3} &=& \dddot{y}
-\end{array}
-\]
-
-\end{minipage}
-\begin{minipage}[t]{0.35\textwidth}
-\vspace{0pt}
-$\qquad$\includegraphics[width=0.95\textwidth,alt={Portrait of Newton}]{newton}
-\end{minipage}
-Beyond three, the dots get a little silly but Newton persevered with outrageous symbols like:
-\includegraphics[width=0.5em,alt={Newton's dot notation}]{dot}. We won't be using this notation in class!
 
 \section*{Differentials (ca 1900)}
 
-Above we said that the symbol $\frac{dy}{dx}$ is a {\it function}---that is
+The derivative symbol $\frac{dy}{dx}$ is a {\it function}---that is
 $\frac{dy}{dx} = \frac{dy}{dx}(x)$---except when it isn't.
-You can thank the famous French mathematician \'Elie Cartan for that.
+You can thank the French mathematician \'Elie Cartan for that.
 
-Cartan helped to formalize the intuitive idea that $dx$ and $dy$ represent tiny changes in $x$ and $y$.
-He called them {\it differentials}---a term that even today has several possible interpretations. One way uses local
-linear approximation similar to the definition of derivative.\\
-
-\begin{minipage}[t]{0.35\textwidth}
-\vspace{0pt}
-$\qquad$\includegraphics[width=0.75\textwidth,alt={Portrait of Cartan}]{cartan}
-\end{minipage}
-\begin{minipage}[t]{0.65\textwidth}
-\vspace{0pt}
+Cartan helped to formalize the intuitive idea that $dx$ and $dy$ represent tiny
+changes in $x$ and $y$.  He called them {\it differentials}---a term that even
+today has several possible interpretations. One uses local linear
+approximation inspired by the definition of derivative.
 
 Let $y = f(x)$ be a differentiable function with derivative $f'(x)$ (using
 Lagrange's notation). Let $dx$ be a variable representing a nonzero real number.
@@ -182,93 +48,20 @@ Define $dy$ as:
 \[
 dy = f'(x)dx.
 \]
-Note that here, $dy$ is a function of $x$ {\it{\bf{ and}}} of $dx$ since it depends on both of them. Defined
-in this way, $dy$ and $dx$ are called ``differentials.''\\
+Note that here, $dy$ is a function of $x$ {\it{\bf{ and}}} of $dx$ since it
+depends on both of them. Defined in this way, $dy$ and $dx$ are called
+``differentials.''
 
 If you divide each side of the above equation by $dx$ you get:
 \[
 \dfrac{dy}{dx} = f'(x),
 \]
-which is just the usual way we write the derivative! Thus, we can think of $dy/dx$ the usual way---as a function of $x$---or,
-in differential form we can think separately of $dy$ (as a function of both $x$ and $dx$) and $dx$ (as a number).
-\end{minipage}
+which is just the usual way we write the derivative! Thus, we can think of
+$dy/dx$ the usual way---as a function of $x$---or, in differential form we can
+think separately of $dy$ (as a function of both $x$ and $dx$) and $dx$ (as a
+number).
 
-Differentials are useful in at least two important applications: integration using substitution, and in the solution of
-some differential equations.
-
-
-\section*{Arbogast's D-notation (1800) and partial derivatives\cite{la}}
-
-\begin{minipage}[t]{0.25\textwidth}
-\vspace{0pt}
-$\qquad$\includegraphics[width=0.80\textwidth,alt={Portrait of Arbogast}]{arbogast}
-\end{minipage}
-\begin{minipage}[t]{0.75\textwidth}
-This is a differential operator notation that we {\it will} use a lot, but not
-until Calc 3 and differential equations courses. It is widely used in the kinds
-of problems encountered there. It is often mis-attributed to Euler. Here is the gist:
-\[
-\begin{array}{rcrcl}
-&& Df &=& \frac{d}{dx}\big(f\big)\\[4pt]
-&& (Df)(x) &=& \frac{df}{dx}(x)\\[4pt]
-&& D^2f &=& \frac{d^2}{dx^2}\big(f\big)\\[4pt]
-f_{x} &=& \partial_{x}f &=& \frac{\partial}{\partial x}\big(f\big)\\[4pt]
-f_{xx} &=& \partial_{xx}f &=& \frac{\partial^2}{\partial x^2}\big(f\big)\\[4pt]
-\end{array}
-\]
-\end{minipage}
-Those last few are called ``partial'' derivatives that we will spend a lot of time on
-in the third semester (Calc 3).
-
-\section*{Appendix: Non-standard numbers and infinitesimals}
-
-\begin{minipage}[t]{0.75\textwidth}
-\vspace{0pt}
-Abraham Robinson devised a ``non-standard analysis'' that
-directly implements the intuitive ideas of Leibniz representing $dx$ and $dy$ as
-infinitely tiny quantities\cite{arob}. All he had to do was invent a new kind of number
-that is larger than any real number. Why not?\\[-4pt]
-
-We normally assume that the real numbers are unbounded.
-Robinson throws this out and invents numbers bigger than any real number.
-So if $x$ is any real number and $N$ is a non-standard number then $N$ > $x$.
-And, weirdly,
-for \emph{any} positive real number $p$:
-\[
-0 < \dfrac{1}{N} < p
-\]
-
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.23\textwidth}
-\vspace{-4.5em}
-\includegraphics[width=\textwidth,alt={Portrait of Robinson}]{robinson}\\
-\footnotesize{Mathematician and Dilbert boss look-alike contest winner, Abe Robinson}
-\end{minipage}
-These things: $1/N$ for a non-standard number $N$, are called \emph{infinitesimals}.
-Robinson developed a version of calculus based on this.
-
-
-Remarkably, he showed the non-standard approach to be essentially identical to
-the usual calculus, demonstrating that the assumption that real numbers are
-unbounded is not necessary (for calculus, anyway).  Some tricky problems are actually easier to solve
-with the non-standard approach. Perhaps Leibniz was ahead of his time!
-
-
-
-\begin{thebibliography}{99}
-\bibitem{la}Arbogast, Louis F. A.. Du calcul des derivations, 1800.
-\bibitem{in}Newton, Isaac. De analysi per aequationes numero terminorum infinitas, 1669.
-\bibitem{arob}Robinson, Abraham. Non-standard analysis. North-Holland Publishing Co., Amsterdam, 1966.
-\bibitem{jl}Roero, Clara Silvia. ``Gottfried Wilhelm Leibniz, first three papers on the calculus (1684, 1686, 1693).'' Landmark Writings in Western Mathematics 1640-1940. Elsevier Science, 2005. 46-58.
-\end{thebibliography}
-
-Photo credits
-\begin{enumerate}
-\item[Lagrange:] Wikipedia \url{https://commons.wikimedia.org/wiki/File:Lagrange_crop.jpg}
-\item[Newton:] Godfrey Kneller, Portrait of Sir Isaac Newton, 1689. From\\ \url{https://exhibitions.lib.cam.ac.uk/linesofthought/artifacts}
-\item[Cartan:] Wikipedia \url{https://en.wikipedia.org/wiki/File:Elie_Cartan.jpg}
-\item[Robinson:] London Mathematical Society \\\url{https://mathshistory.st-andrews.ac.uk/LMS/robinson_lms_obit.pdf}
-\end{enumerate}
+Differentials are useful in at least two important applications: integration
+using substitution, and in the solution of some differential equations.
 
 \end{document}
