@@ -207,7 +207,7 @@ This turns on tagging and embeds \emph{two} kinds of mathematical notation marku
 \vspace{4em}
 \subsection*{PDF document metadata}
 \vspace{2em}
-Add the following above \texttt{\textbackslash{begin}\{document\}} (adjusting entries as needed):\\
+Add the following to your preamble above \texttt{\textbackslash{begin}\{document\}} (adjusting entries as needed):\\
 
 \texttt{\textbackslash{usepackage\{hyperref\}} \\
 \textbackslash{hypersetup}\{\\
@@ -239,7 +239,9 @@ Include the following package in your document preamble:\\
 \strikethroughminipage{0.3\textwidth}{
 {\texttt{\textbackslash{usepackage}\{amsmath\}}}\\
 {\texttt{\textbackslash{usepackage}\{amssymb\}}}
-}
+}\\
+
+This may not be strictly necessary but tends to produce good embedded MathML output.
 
 \end{minipage}
 }
@@ -310,15 +312,38 @@ output in more than 50 languages, and works very well!
 \vspace{2em}
 \begin{itemize}
 \item These techniques are all \emph{very} new! Most (all?) accessibility
-checkers don't work. That includes, at least, Blackboard's built-in checker as
-of Spring 2026.
+checkers simply don't work correctly yet. That includes, at least, Blackboard's
+built-in checker as of Spring 2026. Look for proof in pudding and run
+your PDF otuput through a reader like NVDA to make sure it works well.
+\item \emph{Most} \LaTeX$\,$ packages ``just work.'' Your mileage may
+vary however with less mainstream packages. If you run into issues you might
+need to consider some changes.
 \end{itemize}
 \end{minipage}
 }
 
 
+\newpage
 
-
+\hspace{4em}
+\scalebox{1.8}{%
+\begin{minipage}{0.5\textwidth}
+\vspace{4em}
+\section*{About us}
+\begin{minipage}{0.475\textwidth}
+Carla Zeigler is the Coordinator of Distance Learning and Instructional Design at
+Garrett College...
+\end{minipage}\hfill
+\begin{minipage}{0.475\textwidth}
+\begin{center}
+\includegraphics[width=0.5\textwidth]{BryanLewis}\\
+\end{center}
+Bryan Lewis teaches math at Garrett College and has been using \LaTeX since
+the mid 1990s. He's written dozens of journal papers, a book, many talks,
+and lots of classroom notes in \LaTeX.
+\end{minipage}
+\end{minipage}
+}
 
 
 \end{document}
