@@ -9,6 +9,7 @@
 \usepackage[a4paper, left=0cm, right=0cm, top=0cm, bottom=0cm, paperwidth=34.29cm, paperheight=19.29cm]{geometry} 
 
 \usepackage{unicode-math}
+\usepackage{wasysym}
 \usepackage{rotating}
 \usepackage{xcolor}
 \usepackage{tikz}
@@ -90,6 +91,22 @@ Chances are you \emph{will} encounter \LaTeX in STEM!
 \scalebox{1.8}{%
 \begin{minipage}{0.5\textwidth}
 \vspace{4em}
+\subsection*{More Accessibility --- placeholder}
+\vspace{2em}
+\begin{itemize}
+\item
+\item
+\item
+\end{itemize}
+\end{minipage}
+}
+
+\newpage
+
+\hspace{4em}
+\scalebox{1.8}{%
+\begin{minipage}{0.5\textwidth}
+\vspace{4em}
 \section*{Accessible PDF Output is (Recently) Possible!}
 \vspace{2em}
 \begin{itemize}
@@ -131,8 +148,11 @@ Chances are you \emph{will} encounter \LaTeX in STEM!
 \subsection*{Using \texttt{lualatex} with MiKTeX on Macs and Windows Systems}
 \begin{enumerate}
 \item Install MiKTeX (\url{https://miktex.org/download})
+\item Open the installed TeXworks editor and select the LuaLaTeX engine from the dropdown (see figure below).
 \end{enumerate}
-\vspace{2em}
+\hspace{3em}\includegraphics[alt={MiKTeX TeXworks editor engine selection}, width=0.5\textwidth]{MiKTeX}\\
+
+That's it! Note that MiKTeX may need to download and install a few packages the first time you select the LuaLaTeX option.
 \end{minipage}
 }
 
@@ -144,7 +164,13 @@ Chances are you \emph{will} encounter \LaTeX in STEM!
 \begin{minipage}{0.5\textwidth}
 \vspace{4em}
 \subsection*{Using \texttt{lualatex} with Overleaf}
-\vspace{2em}
+Overleaf is a popular online \LaTeX$\,$ editor with over 20 million users. You can
+set it up to use the \texttt{lualatex} engine. Alas, this might only work with the paid version \frownie .
+\begin{itemize}
+\item From the File menu, select the ``Settings'' option.
+\item Navigate to ``Compiler'' and select ``LuaLaTeX'' as shown in the figure below.
+\end{itemize}
+\hspace{3em}\includegraphics[width=0.75\textwidth]{overleaf}
 \end{minipage}
 }
 
@@ -208,9 +234,10 @@ Include the following package in your document preamble:\\
 \texttt{\textbackslash{usepackage\{unicode-math\}} \\
 }\\
 
-\emph{Avoid} use of the following package if possible (\texttt{unicode-math} may work in its place):
+\emph{Avoid} use of the following packages if possible (\texttt{unicode-math} may work in their place):
 
 \strikethroughminipage{0.3\textwidth}{
+{\texttt{\textbackslash{usepackage}\{amsmath\}}}\\
 {\texttt{\textbackslash{usepackage}\{amssymb\}}}
 }
 
@@ -230,7 +257,7 @@ Include the following package in your document preamble:\\
 Whenever you include an image in your document, be sure to include a text description defined with
 \texttt{alt}. For example:\\[1em]
 
-\texttt{\textbackslash{includegraphics}[alt={Accessible PDFs with LaTeX for Teachers}]\{filename\}
+\texttt{\textbackslash{includegraphics}[alt=\{Accessible PDFs with LaTeX for Teachers\}]\{filename\}
 }
 
 \end{minipage}
@@ -243,7 +270,11 @@ Whenever you include an image in your document, be sure to include a text descri
 \scalebox{1.8}{%
 \begin{minipage}{0.5\textwidth}
 \vspace{10em}
-\large{Congratulations! Your \LaTeX-generated PDF documents are now accessible!}
+\large{Congratulations! Your \LaTeX-generated PDF documents are now accessible!}\\[2em]
+
+See\\
+\url{https://github.com/bwlewis/latex-pdf-accessibility/tree/main/example}\\
+for a complete, self-contained example document.
 
 \end{minipage}
 }
@@ -259,12 +290,35 @@ Whenever you include an image in your document, be sure to include a text descri
 \section*{Setting up NVDA reader software with MathCAT}
 \vspace{2em}
 \begin{itemize}
-\item These techniques are all \emph{very} new and not yet uniformly supported, but that's changing quickly.
-\item The reader software with the most complete support is NVDA (NV Access) equipped with the MathCAT add-on. It's free, supports audible and braille in more than 50 languages, and works very well!
-\item[] https://www.nvaccess.org/download/
+\item These techniques are all \emph{very} new and not yet uniformly supported,
+but that's changing quickly.
+\item The reader software with the most complete support is NVDA (NV Access)
+equipped with the MathCAT add-on. It's free, supports audible and braille
+output in more than 50 languages, and works very well!
+\item[] \url{https://www.nvaccess.org/download/}
 \end{itemize}
-
 \end{minipage}
 }
+
+\newpage
+
+\hspace{4em}
+\scalebox{1.8}{%
+\begin{minipage}{0.5\textwidth}
+\vspace{4em}
+\section*{Issues...}
+\vspace{2em}
+\begin{itemize}
+\item These techniques are all \emph{very} new! Most (all?) accessibility
+checkers don't work. That includes, at least, Blackboard's built-in checker as
+of Spring 2026.
+\end{itemize}
+\end{minipage}
+}
+
+
+
+
+
 
 \end{document}
