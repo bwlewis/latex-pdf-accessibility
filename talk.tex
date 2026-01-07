@@ -1,0 +1,270 @@
+\DocumentMetadata{
+  tagging=on,
+  tagging-setup={math/setup={mathml-SE,mathml-AF}},
+  pdfstandard=ua-2,
+  pdfstandard=a-4f,
+  lang=en-US
+}
+\documentclass[12pt]{article}
+\usepackage[a4paper, left=0cm, right=0cm, top=0cm, bottom=0cm, paperwidth=34.29cm, paperheight=19.29cm]{geometry} 
+
+\usepackage{unicode-math}
+\usepackage{rotating}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{mathtools}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{
+pdftitle={Accessible PDF with LaTeX},
+pdfauthor={Bryan W. Lewis},
+pdfkeywords={Accessibility, LaTeX, PDF},%
+}
+\usepackage{authblk}
+\usepackage{graphicx}
+\usepackage{float}
+\pagenumbering{gobble}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+
+\newcommand{\strikethroughminipage}[2]{
+    \begin{tikzpicture}[baseline=(current bounding box.north)]
+        \node[fill=white] (m) {
+            \begin{minipage}{#1}
+                #2
+            \end{minipage}
+        };
+        \draw[thick,red] (m.south west) -- (m.north east);
+        \draw[thick,red] (m.north west) -- (m.south east);
+    \end{tikzpicture}
+}
+
+\begin{document}
+
+\noindent  \includegraphics[alt={Accessible PDFs with LaTeX for Teachers}, height=0.999\textheight, width=0.999\textwidth]{dummy}
+
+\vspace{-6em}
+\begin{flushright}
+\Large{\bf Bryan Lewis and Carla Zeigler, Garrett College, January 2026$\,\,\,$}
+\end{flushright}
+
+
+\newpage
+
+
+\hspace{4em}
+\scalebox{1.8}{%
+\begin{minipage}{0.5\textwidth}
+\vspace{4em}
+\section*{Why \LaTeX?}
+\vspace{2em}
+\begin{itemize}
+\item \LaTeX$\,$  is the de facto standard for the communication and publication of math and science.
+Chances are you \emph{will} encounter \LaTeX in STEM!
+\item \LaTeX$\,$  is widely used in publishing because it clearly separates presentation from content.
+\item \LaTeX typesets technical symbols and mathematics beautifully.
+\end{itemize}
+\end{minipage}
+}
+
+\newpage
+
+\hspace{4em}
+\scalebox{1.8}{%
+\begin{minipage}{0.5\textwidth}
+\vspace{4em}
+\section*{Why Accessibility?}
+\vspace{2em}
+\begin{itemize}
+\item
+\item
+\item
+\end{itemize}
+\end{minipage}
+}
+
+\newpage
+
+\hspace{4em}
+\scalebox{1.8}{%
+\begin{minipage}{0.5\textwidth}
+\vspace{4em}
+\section*{Accessible PDF Output is (Recently) Possible!}
+\vspace{2em}
+\begin{itemize}
+\item Thanks to \emph{years} of dilligent work by the \LaTeX project developers:
+\item[] \url{https://www.latex-project.org}
+\item See this presentation at PDF Days 2025 Berlin:
+\item[] \url{https://www.latex-project.org/news/2025/10/30/pdfadays}
+\item Also check out the many solution posters from the conference:
+\item[] \url{https://pdfa.org/the-winning-technical-poster-at-pdf-days-europe-2025}
+\item[]
+\item Our slides walk you through a few basic steps to get things working.
+\end{itemize}
+\end{minipage}
+}
+
+\newpage
+
+\hspace{4em}
+\scalebox{1.8}{%
+\begin{minipage}{0.5\textwidth}
+\vspace{4em}
+\section*{Step 1: Use \texttt{lualatex}}
+\vspace{2em}
+\begin{itemize}
+\item \LaTeX can be processed by many different rendering engines (\texttt{pdflatex}, \texttt{lualatex}, $\ldots$)
+\item \texttt{lualatex} is currently the best engine to use for accessibility.
+\item On many GNU/Linux systems simply install with:
+\item[] \texttt{sudo apt install texlive-luatex}
+\end{itemize}
+\end{minipage}
+}
+
+\newpage
+
+\hspace{4em}
+\scalebox{1.8}{%
+\begin{minipage}{0.5\textwidth}
+\vspace{4em}
+\subsection*{Using \texttt{lualatex} with MiKTeX on Macs and Windows Systems}
+\begin{enumerate}
+\item Install MiKTeX (\url{https://miktex.org/download})
+\end{enumerate}
+\vspace{2em}
+\end{minipage}
+}
+
+
+\newpage
+
+\hspace{4em}
+\scalebox{1.8}{%
+\begin{minipage}{0.5\textwidth}
+\vspace{4em}
+\subsection*{Using \texttt{lualatex} with Overleaf}
+\vspace{2em}
+\end{minipage}
+}
+
+
+\newpage
+
+\hspace{4em}
+\scalebox{1.8}{%
+\begin{minipage}{0.5\textwidth}
+\vspace{4em}
+\section*{Step 2: Metadata in your documents}
+\vspace{2em}
+Add the following to the very top of your document (adjusting \texttt{lang} as needed):\\
+
+\texttt{\textbackslash{DocumentMetadata}\{ \\
+\phantom{x}  tagging=on, \\
+\phantom{x}  tagging-setup=\{math/setup=\{mathml-SE,mathml-AF\}\}, \\
+\phantom{x}  pdfstandard=ua-2, \\
+\phantom{x}  pdfstandard=a-4f, \\
+\phantom{x}  lang=en-US \\
+\}
+}\\
+
+This turns on tagging and embeds \emph{two} kinds of mathematical notation markup for widest compatibility with reader software.
+\end{minipage}
+}
+
+
+\newpage
+
+\hspace{4em}
+\scalebox{1.8}{%
+\begin{minipage}{0.5\textwidth}
+\vspace{4em}
+\subsection*{PDF document metadata}
+\vspace{2em}
+Add the following above \texttt{\textbackslash{begin}\{document\}} (adjusting entries as needed):\\
+
+\texttt{\textbackslash{usepackage\{hyperref\}} \\
+\textbackslash{hypersetup}\{\\
+\phantom{x} pdftitle=\{Accessible PDF with LaTeX\},\\
+\phantom{x} pdfauthor=\{Bryan W. Lewis\},\\
+\phantom{x} pdfsubject=\{Accessibility\},\\
+\phantom{x} pdfkeywords=\{Accessibility, LaTeX, PDF\},\\
+\}
+}\\
+
+\end{minipage}
+}
+
+\newpage
+
+\hspace{4em}
+\scalebox{1.8}{%
+\begin{minipage}{0.5\textwidth}
+\vspace{4em}
+\subsection*{Use the \texttt{unicode-math} math symbol package}
+\vspace{2em}
+Include the following package in your document preamble:\\
+
+\texttt{\textbackslash{usepackage\{unicode-math\}} \\
+}\\
+
+\emph{Avoid} use of the following package if possible (\texttt{unicode-math} may work in its place):
+
+\strikethroughminipage{0.3\textwidth}{
+{\texttt{\textbackslash{usepackage}\{amssymb\}}}
+}
+
+\end{minipage}
+}
+
+
+
+\newpage
+
+\hspace{4em}
+\scalebox{1.8}{%
+\begin{minipage}{0.5\textwidth}
+\vspace{4em}
+\subsection*{Be sure to add text descriptions to every included image}
+\vspace{2em}
+Whenever you include an image in your document, be sure to include a text description defined with
+\texttt{alt}. For example:\\[1em]
+
+\texttt{\textbackslash{includegraphics}[alt={Accessible PDFs with LaTeX for Teachers}]\{filename\}
+}
+
+\end{minipage}
+}
+
+
+\newpage
+
+\hspace{4em}
+\scalebox{1.8}{%
+\begin{minipage}{0.5\textwidth}
+\vspace{10em}
+\large{Congratulations! Your \LaTeX-generated PDF documents are now accessible!}
+
+\end{minipage}
+}
+
+
+
+\newpage
+
+\hspace{4em}
+\scalebox{1.8}{%
+\begin{minipage}{0.5\textwidth}
+\vspace{4em}
+\section*{Setting up NVDA reader software with MathCAT}
+\vspace{2em}
+\begin{itemize}
+\item These techniques are all \emph{very} new and not yet uniformly supported, but that's changing quickly.
+\item The reader software with the most complete support is NVDA (NV Access) equipped with the MathCAT add-on. It's free, supports audible and braille in more than 50 languages, and works very well!
+\item[] https://www.nvaccess.org/download/
+\end{itemize}
+
+\end{minipage}
+}
+
+\end{document}
