@@ -110,9 +110,8 @@ Chances are you \emph{will} encounter \LaTeX in STEM!
 \section*{Accessible PDF Output is (Recently) Possible!}
 \vspace{2em}
 \begin{itemize}
-\item Thanks to \emph{years} of diligent work by the \LaTeX$\,$ project developers:
-\item[] \url{https://www.latex-project.org}
-\item See this presentation at PDF Days 2025 Berlin:
+\item Thanks to \emph{years} of diligent work by the \LaTeX$\,$ project developers.
+See this presentation at PDF Days 2025 Berlin:
 \item[] \url{https://www.latex-project.org/news/2025/10/30/pdfadays}
 \item Also check out the many solution posters from the conference:
 \item[] \url{https://pdfa.org/the-winning-technical-poster-at-pdf-days-europe-2025}
@@ -145,7 +144,7 @@ Chances are you \emph{will} encounter \LaTeX in STEM!
 \scalebox{1.8}{%
 \begin{minipage}{0.5\textwidth}
 \vspace{4em}
-\subsection*{Using \texttt{lualatex} with MiKTeX on Macs and Windows Systems}
+\subsection*{Using \texttt{lualatex} with MiKTeX on Mac and Windows Systems}
 \begin{enumerate}
 \item Install MiKTeX (\url{https://miktex.org/download})
 \item Open the installed TeXworks editor and select the LuaLaTeX engine from the drop-down menu (see figure below).
@@ -194,7 +193,7 @@ Add the following to the very top of your document (adjusting \texttt{lang} as n
 \}
 }\\
 
-This turns on tagging and embeds \emph{two} kinds of mathematical notation markup for widest compatibility with reader software.
+This turns on tagging and embeds two kinds of mathematical notation markup for widest compatibility with reader software.
 \end{minipage}
 }
 
@@ -271,12 +270,14 @@ Whenever you include an image in your document, be sure to include a text descri
 \hspace{4em}
 \scalebox{1.8}{%
 \begin{minipage}{0.5\textwidth}
-\vspace{10em}
-\large{Congratulations! Your \LaTeX-generated PDF documents are now accessible!}\\[2em]
+\vspace{4em}
+{\large{Congratulations! Your \LaTeX-generated PDF documents are now accessible!}}\\[2em]
 
 See\\
+
 \url{https://github.com/bwlewis/latex-pdf-accessibility/tree/main/example}\\
-for a complete, self-contained example document.
+
+for a simple but complete, self-contained example document.
 
 \end{minipage}
 }
@@ -292,14 +293,13 @@ for a complete, self-contained example document.
 \section*{Setting up NVDA reader software with MathCAT}
 \vspace{2em}
 \begin{itemize}
-\item These techniques are all \emph{very} new and not yet uniformly supported,
-but that's changing quickly.
 \item The reader software with the most complete support is NVDA (NV Access)
 equipped with the MathCAT add-on. It's free, supports audible and braille
-output in more than 50 languages, and works very well!
+output in many languages, and works very well!
 \item[] \url{https://www.nvaccess.org/download/}
+\item[]
+\item Install NVDA from the above link$\ldots$
 \end{itemize}
-Install NVDA from the above link$\ldots$
 \end{minipage}
 }
 
@@ -314,16 +314,17 @@ Install NVDA from the above link$\ldots$
 \begin{itemize}
 \item Bring up the NVDA menu and select ``Add-on store$\ldots$'' from the ``Tools'' menu.
 \item Right-click on the ``MathCAT: speech and braille from MathML'' add-on and select ``Install''
-You will see ``Downloaded, pending install'' in the Status column. This can take a while.
+You will see ``Downloaded, pending install'' in the Status column. (This can take a while.)
 \item You'll be asked to re-start NVDA for the add-on to take effect.
 \end{itemize}
 
 You're all set to read beautiful PDF documents with \LaTeX$\,$ math aloud or in braille!\\
 
-We recommend using Microsoft Edge to view PDF documents to be read by NVDA. Firefox
-also works, but had some quirks. We couldn't get Google Chrome to work at all.\\
+We recommend using Microsoft Edge to view PDF documents to be read by NVDA---it
+worked fine! Firefox also worked for us, but had some quirks. Google Chrome's
+PDF viewer didn't work at all with NVDA on our Windows 11 computer.\\
 
-As an alternative, Adboe Acrobat Reader should also work well.
+As an alternative, Adobe Acrobat Reader should also work.
 
 \end{minipage}
 }
@@ -338,19 +339,18 @@ As an alternative, Adboe Acrobat Reader should also work well.
 \scalebox{1.8}{%
 \begin{minipage}{0.5\textwidth}
 \vspace{4em}
-\section*{Issues...}
+\section*{Issues}
 \vspace{2em}
 \begin{itemize}
 \item These techniques are all \emph{very} new! Most (all?) accessibility
 checkers simply don't work correctly yet. That includes, at least, Blackboard's
-built-in checker as of Spring 2026. Look for proof in pudding and run
+built-in checker as of January 2026. Look for proof in pudding and run
 your PDF output through a reader like NVDA to make sure it works well.
 \item \emph{Most} \LaTeX$\,$ packages ``just work.'' Your mileage may
 vary however with less mainstream packages. If you run into issues you might
-need to consider some changes.
-\item As mentioned in the last slide, choice of PDF viewer can lead to
-quirky behavior. We expect that this will be less of a problem as the
-software matures.
+need to consider package changes.
+\item As mentioned in the last slide, choice of PDF viewer can be finicky.
+We expect fewer glitches as the software matures.
 \end{itemize}
 \end{minipage}
 }
@@ -378,5 +378,22 @@ and lots of classroom notes in \LaTeX.
 \end{minipage}
 }
 
+
+\newpage
+
+\hspace{4em}
+\scalebox{1.8}{%
+\begin{minipage}{0.5\textwidth}
+\vspace{4em}
+\section*{Slide source code, examples, and more}
+\vspace{2em}
+These slides, examples, and example videos are available from:\\
+
+\url{https://github.com/bwlewis/latex-pdf-accessibility}\\
+
+and can be freely used and redistributed without restriction.
+
+\end{minipage}
+}
 
 \end{document}

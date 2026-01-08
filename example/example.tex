@@ -7,7 +7,7 @@
 }
 \documentclass[12pt]{article}
 \usepackage{unicode-math}
-\usepackage{color}
+\usepackage{graphicx}
 \usepackage{hyperref}
 \hypersetup{
 pdftitle={Differentials},
@@ -22,16 +22,19 @@ pdfkeywords={MAT 190 Calculus 1},%
 
 \begin{document}
 
-\section*{Differentials (ca 1900)}
+The derivative symbol $\frac{dy}{dx}$ is a \emph{function}.
+Except when it isn't!
 
-The derivative symbol $\frac{dy}{dx}$ is a {\it function}---that is
-$\frac{dy}{dx} = \frac{dy}{dx}(x)$---except when it isn't.
-You can thank the French mathematician \'Elie Cartan for that.
+The French mathematician \'Elie Cartan helped to formalize the intuitive idea
+that $dx$ and $dy$ represent tiny changes in $x$ and $y$. He called them {\it
+differentials} and constructed them using local linear approximation inspired
+by the definition of derivative.
 
-Cartan helped to formalize the intuitive idea that $dx$ and $dy$ represent tiny
-changes in $x$ and $y$.  He called them {\it differentials}---a term that even
-today has several possible interpretations. One uses local linear
-approximation inspired by the definition of derivative.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[alt={Photograph of Elie Cartan}, width=0.3\textwidth]{cartan}\\
+  \small{\textit{\'Elie Cartan's magnificent moustache}}
+\end{figure}
 
 Let $y = f(x)$ be a differentiable function with derivative $f'(x)$ (using
 Lagrange's notation). Let $dx$ be a variable representing a nonzero real number.
@@ -52,7 +55,5 @@ $dy/dx$ the usual way---as a function of $x$---or, in differential form we can
 think separately of $dy$ (as a function of both $x$ and $dx$) and $dx$ (as a
 number).
 
-Differentials are useful in at least two important applications: integration
-using substitution, and in the solution of some differential equations.
 
 \end{document}

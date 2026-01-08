@@ -1,0 +1,40 @@
+\DocumentMetadata{
+  tagging=on,
+  tagging-setup={math/setup={mathml-SE,mathml-AF}},
+  pdfstandard=ua-2,
+  pdfstandard=a-4f,
+  lang=en-US
+}
+\documentclass[12pt]{article}
+\usepackage{unicode-math}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\hypersetup{
+pdftitle={Differentials},
+pdfauthor={Bryan W. Lewis},
+pdfkeywords={Maxwell-Farady Equation},%
+}
+\pagenumbering{gobble}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+
+\begin{document}
+
+\section*{The Maxwell-Faraday Equation}
+
+The equation can be written equivalently as a differential equation or an
+integral equation. Here is the differential version:
+
+\[
+\nabla\times E = -\dfrac{\partial B}{\partial t}
+\]
+
+And here it is in integral form:
+
+\[
+\int_{\partial \Sigma} E \cdot d\ell = -\dfrac{d}{dt}\iint_\Sigma B \cdot dA
+\]
+
+\end{document}
