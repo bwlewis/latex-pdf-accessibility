@@ -1,6 +1,6 @@
 \DocumentMetadata{
   tagging=on,
-  tagging-setup={math/setup={mathml-SE,mathml-AF}},
+  tagging-setup={math/setup={mathml-SE,mathml-AF},math/alt/use},
   pdfstandard=ua-2,
   pdfstandard=a-4f,
   lang=en-US
@@ -190,14 +190,15 @@ Add the following to the very top of your document (adjusting \texttt{lang} as n
 
 \texttt{\textbackslash{DocumentMetadata}\{ \\
 \phantom{x}  tagging=on, \\
-\phantom{x}  tagging-setup=\{math/setup=\{mathml-SE,mathml-AF\}\}, \\
+\phantom{x}  tagging-setup=\{math/setup=\{mathml-SE,mathml-AF\},math/alt/use\}, \\
 \phantom{x}  pdfstandard=ua-2, \\
 \phantom{x}  pdfstandard=a-4f, \\
 \phantom{x}  lang=en-US \\
 \}
 }\\
 
-This turns on tagging and embeds two kinds of mathematical notation markup for widest compatibility with reader software.
+This turns on tagging and embeds two kinds of mathematical notation markup for widest compatibility with reader software
+\emph{and} adds LaTeX-based alt-text tags to images for older readers that can't understand MathML.
 \end{minipage}
 }
 
@@ -244,7 +245,8 @@ Include the following package in your document preamble:\\
 {\texttt{\textbackslash{usepackage}\{amssymb\}}}
 }\\
 
-This may not be strictly necessary but tends to produce good embedded MathML output.
+This may not be strictly necessary but tends to produce good embedded MathML output.\\
+BREAKING NEWS, as of Spring, 2026 amsmath should work OK!
 
 \end{minipage}
 }
@@ -276,6 +278,8 @@ Whenever you include an image in your document, be sure to add a text descriptio
 \begin{minipage}{0.5\textwidth}
 \vspace{4em}
 {\large{Congratulations! Your \LaTeX-generated PDF documents are now accessible!}}\\[2em]
+
+Documents prepared in this way should score 100\% in Blackboard Ally's checker.\\
 
 See\\
 
@@ -347,9 +351,9 @@ As an alternative, Adobe Acrobat Reader should also work.
 \vspace{2em}
 \begin{itemize}
 \item These techniques are all \emph{very} new! Most (all?) accessibility
-checkers simply don't work correctly yet. That includes, at least, Blackboard's
-built-in checker as of January 2026. Look for proof in pudding and run
-your PDF output through a reader like NVDA to make sure it works well.
+checkers simply don't work correctly yet. That includes, at least to some extent, Blackboard's Ally
+built-in checker as of January 2026 (which only understands alt-text equation image tags
+and does not understand MathML yet).
 \item \emph{Most} \LaTeX$\,$ packages ``just work.'' Your mileage may
 vary however with less mainstream packages. If you run into issues you might
 need to consider package changes.
